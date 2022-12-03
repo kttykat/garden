@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+	integrations: [mdx(), tailwind()],
 	server: {
 		port: 7233,
 	},
@@ -12,5 +13,4 @@ export default defineConfig({
 			theme: "one-dark-pro",
 		},
 	},
-	integrations: [mdx(), tailwind()],
 });
