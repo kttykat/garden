@@ -3,6 +3,14 @@ const { name, desc, dark } = Astro.props;
 import "../base.css";
 ---
 
+<script>
+  const ele = document.getElementById("heading")
+  if(ele) {
+    ele.onclick = ( ) => window.location.href = `/`
+  }
+</script>
+
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />

@@ -10,7 +10,6 @@
   font-family: 'Newsreader', serif;
 }
 
-
 .astro-code {
   background-color: var(--foreground) !important;
 }
@@ -61,7 +60,7 @@ p {
 
 
 .btn:hover {
-  @apply bg-foreground text-background
+  @apply bg-foreground text-background 
 }
 
 a:not(.btn) {
