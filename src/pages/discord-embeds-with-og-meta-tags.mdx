@@ -1,0 +1,27 @@
+---
+name: "Discord embeds with OG meta tags."
+date: 4/12/22
+layout: ../layouts/PostLayout.astro
+---
+
+Discord embeds ( and other embeded versions e.g twitter ) are a nice addition to your next web applications. They allow someone to find out some basic information about what they expect to see aswell as other nice things.
+
+Within this digital garden i use a image generator for the meta images. You can find the original ogmeta image generator [here](https://github.com/hopinc/ogmeta) and my customised version that used expressjs [here](https://github.com/kttykat/ogmeta). Under the hood the generator builds an static file with your generated image, deploys a [puppeter](https://pptr.dev/) window and takes a screen shot to return back to the requester.
+
+An example of what i currently used can be found below.
+
+```html
+<meta property="og:site_name" content="Saige's Garden 🌿" />
+<meta property="og:title" content={name} />
+<meta property="og:description" content={desc} />
+<meta
+	property="og:image"
+	content={`https://ogmeta.saige.systems?title=${name}${
+		desc ? `&desc=${desc}` : ""
+	}${dark ? "&dark=true" : ""}`}
+/>
+<meta name="theme-color" content="#1e191b" />
+<meta name="twitter:card" content="summary_large_image" />
+```
+Values such as "desc" and "name" are passed through as props to the base layout of this astro application.
+The generated embed would look like the one below for this note.

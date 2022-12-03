@@ -1,7 +1,7 @@
 ---
- const { href } = Astro.props
+ const { href, id } = Astro.props
 ---
 
-<a href={href} class="w-fit cursor-pointer h-fit bounce btn border border-foreground bg-background text-foreground py-1 px-2 rounded flex items-center">
+<a href={href} id={id} class="w-fit cursor-pointer h-fit bounce btn border border-foreground bg-background text-foreground dark:border-background dark:bg-foreground dark:text-background py-1 px-2 rounded flex items-center">
   <slot/>
 </a>

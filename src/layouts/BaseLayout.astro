@@ -8,6 +8,19 @@ import "../base.css";
 	if (ele) {
 		ele.onclick = () => (window.location.href = `/`);
 	}
+
+	const d = document.getElementById("dark_mode_toggler");
+	if (d) {
+		d.onclick = () => {
+			if (
+				!document.body.classList.contains("dark")
+			) {
+				return document.body.classList.add("dark");
+			} else {
+				return document.body.classList.remove("dark");
+			}
+		};
+	}
 </script>
 
 <html lang="en">
@@ -30,8 +43,10 @@ import "../base.css";
 		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body>
-		<div class="bg-background text-foreground mx-auto max-w-3xl pl-[2rem] pr-[2rem] mt-[5rem]">
-				<slot />
+		<div
+			class="bg-background text-foreground dark:bg-foreground dark:text-background mx-auto max-w-3xl pl-[2rem] pr-[2rem] mt-[5rem]"
+		>
+			<slot />
 		</div>
 	</body>
 </html>

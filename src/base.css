@@ -6,6 +6,11 @@
 		--foreground: #1e191b;
 }
 
+body.dark {
+  --background: #1e191b;
+    --foreground: #F9ede3;
+}
+
 *:not(.astro-code) {
   font-family: 'Newsreader', serif;
 }
@@ -21,6 +26,7 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
 
 h1,h2,h3,h4,h5,h6 {
   @apply font-bold italic
@@ -60,7 +66,7 @@ p {
 
 
 .btn:hover {
-  @apply bg-foreground text-background 
+  @apply bg-foreground text-background dark:bg-background dark:text-foreground
 }
 
 a:not(.btn) {
@@ -69,7 +75,7 @@ a:not(.btn) {
 
 
 .astro-code {
-  @apply rounded border border-foreground p-2 text-sm border-opacity-40 
+  @apply rounded border border-foreground p-2 text-sm border-opacity-40 dark:border-background mb-2
 }
 
 code {
@@ -93,4 +99,8 @@ code .line::before {
 
 .main p {
   @apply mb-2
+}
+
+img, video {
+  @apply rounded
 }
