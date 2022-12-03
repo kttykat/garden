@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  	--background: #F9ede3;
+		--foreground: #1e191b;
+}
+
+*:not(.astro-code) {
+  font-family: 'Newsreader', serif;
+}
+
+
+.astro-code {
+  background-color: var(--foreground) !important;
+}
+.astro-code code, .astro-code code span , code {
+  font-family:  'Spline Sans Mono', monospace !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+h1,h2,h3,h4,h5,h6 {
+  @apply font-bold italic
+}
+
+h1 { 
+  @apply text-3xl
+}
+
+h2 { 
+  @apply text-2xl
+}
+
+h3 { 
+  @apply text-xl
+}
+
+h4 { 
+  @apply text-lg
+}
+
+h5 { 
+  @apply text-base
+}
+
+h6 { 
+  @apply text-sm
+}
+
+p {
+  @apply leading-5
+}
+
+.bounce  {
+  transition: .4s cubic-bezier(0.22, 0.12, 0.02, 1.26);
+}
+
+
+.btn:hover {
+  @apply bg-foreground text-background
+}
+
+a:not(.btn) {
+  @apply underline italic underline-offset-2 font-semibold
+}
+
+
+.astro-code {
+  @apply rounded border border-foreground p-2 text-sm border-opacity-40 
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 1rem;
+  margin-right: 1.25rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.main h1,.main h2,.main h3,.main h4,.main h5,.main h6 {
+  @apply mt-4
+} 
+
+.main p {
+  @apply mb-2
+}

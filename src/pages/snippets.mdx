@@ -1,0 +1,41 @@
+---
+name: "Snippets"
+date: "2/12/22"
+description: "Some basic snippets that i are cool and i like to use"
+layout: ../layouts/PostLayout.astro
+---
+
+## Bounce
+```css
+.bounce {
+    transition: .4s cubic-bezier(0.22, 0.12, 0.02, 1.26);
+}
+```
+
+## Astro Code Blocks
+```css
+/* Before Tailwind */
+.astro-code code, .astro-code code span , code {
+  font-family:  'Spline Sans Mono', monospace !important;
+}
+
+/* After Tailwind */
+.astro-code {
+  @apply rounded border border-foreground p-2 text-sm border-opacity-40
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 1rem;
+  margin-right: 1.25rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+}
+```

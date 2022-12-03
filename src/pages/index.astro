@@ -1,0 +1,33 @@
+---
+import Button from "../components/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+let posts = await Astro.glob(`./**.mdx`)
+
+posts = posts.filter(f => !f.frontmatter.wip)
+---
+
+<BaseLayout>
+	<h1>Welcome to my garden.</h1>
+	<p class="mb-2">
+		This is a collection of notes, scrap parts, snippets etc that i have
+		collected or am collecting + some intresting stuff i find. There may be
+		spelling & grammar mistakes but that is because this is not supposed to be
+		professional
+	</p>
+	<div class="flex flex-row gap-2 max-h-[27px] mb-10">
+		<Button href="https://github.com/kttykat">Github</Button>
+		<Button href="https://discord.com/users/974025524546531380">Discord</Button>
+		<Button href="mailto:hi@saige.systems">Email</Button>
+	</div>
+	<ul class="list-disc list-inside">
+		{
+			posts.map((post) => {
+				return (
+					<li>
+						<a href={post.url}>{post.frontmatter.name}</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+</BaseLayout>
