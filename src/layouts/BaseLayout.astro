@@ -35,7 +35,7 @@ import "../base.css";
 		<meta property="og:description" content={desc} />
 		<meta
 			property="og:image"
-			content={`https://ogmeta.saige.systems?title=${name}${
+			content={`https://ogmeta.saige.systems?title=${name || "Digital Garden"}${
 				date ? `&desc=${date}` : ""
 			}${dark ? "&dark=true" : ""}`}
 		/>
