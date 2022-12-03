@@ -18,7 +18,11 @@ import "../base.css";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{name ? `>.< — ${name}` : ">.<"}</title>
-		<meta property="og:image" content={`https://ogmeta.saige.systems?title=${name}${desc ? `&desc=${desc}` : ""}${dark ? "&dark=true":  ""}`} />
+		{name ? 
+			<meta property="og:site_name" content="Saige's Garden 🌿" />
+			<meta property="og:title" content={name} />
+			<meta property="og:image" content={`https://ogmeta.saige.systems?title=${name}${desc ? `&desc=${desc}` : ""}${dark ? "&dark=true":  ""}`} />
+		: <></>}
 		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body
