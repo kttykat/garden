@@ -4,12 +4,11 @@ import "../base.css";
 ---
 
 <script>
-  const ele = document.getElementById("heading")
-  if(ele) {
-    ele.onclick = ( ) => window.location.href = `/`
-  }
+	const ele = document.getElementById("heading");
+	if (ele) {
+		ele.onclick = () => (window.location.href = `/`);
+	}
 </script>
-
 
 <html lang="en">
 	<head>
@@ -18,11 +17,14 @@ import "../base.css";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{name ? `>.< — ${name}` : ">.<"}</title>
-		{name ? 
-			<meta property="og:site_name" content="Saige's Garden 🌿" />
-			<meta property="og:title" content={name} />
-			<meta property="og:image" content={`https://ogmeta.saige.systems?title=${name}${desc ? `&desc=${desc}` : ""}${dark ? "&dark=true":  ""}`} />
-		: <></>}
+		<meta property="og:site_name" content="Saige's Garden 🌿" />
+		<meta property="og:title" content={name} />
+		<meta
+			property="og:image"
+			content={`https://ogmeta.saige.systems?title=${name}${
+				desc ? `&desc=${desc}` : ""
+			}${dark ? "&dark=true" : ""}`}
+		/>
 		<meta name="theme-color" content="#1e191b" />
 		<meta name="twitter:card" content="summary_large_image" />
 	</head>
