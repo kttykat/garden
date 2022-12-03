@@ -97,10 +97,26 @@ code .line::before {
   @apply mt-4
 } 
 
-.main p {
+.main p, .main img, .main video {
   @apply mb-2
+}
+
+.main li {
+  @apply list-disc list-inside
 }
 
 img, video {
   @apply rounded
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-foreground bg-opacity-60
 }
