@@ -6,7 +6,7 @@ const { frontmatter, url } = Astro.props;
 const { name, description, date, dark } = frontmatter;
 ---
 
-<BaseLayout name={name} desc={date} dark={dark}>
+<BaseLayout name={name} desc={description} date={date} dark={dark}>
   <div class="flex flex-col gap-1 mb-6">
     <h1 class="mb-[-4px] cursor-pointer w-fit" id="heading">{name.endsWith(".") ? name : `${name}`}</h1>
     <p class="mb-[-6px] italic opacity-80">{date}</p>

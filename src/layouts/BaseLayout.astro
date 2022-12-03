@@ -1,5 +1,5 @@
 ---
-const { name, desc, dark } = Astro.props;
+const { name, desc, date, dark } = Astro.props;
 import "../base.css";
 ---
 
@@ -36,7 +36,7 @@ import "../base.css";
 		<meta
 			property="og:image"
 			content={`https://ogmeta.saige.systems?title=${name}${
-				desc ? `&desc=${desc}` : ""
+				date ? `&desc=${date}` : ""
 			}${dark ? "&dark=true" : ""}`}
 		/>
 		<meta name="theme-color" content="#1e191b" />
