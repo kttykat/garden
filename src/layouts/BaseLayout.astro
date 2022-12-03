@@ -1,5 +1,5 @@
 ---
-const { name } = Astro.props;
+const { name, desc, dark } = Astro.props;
 import "../base.css";
 ---
 
@@ -10,6 +10,8 @@ import "../base.css";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{name ? `>.< — ${name}` : ">.<"}</title>
+		<meta property="og:image" content={`https://ogmeta.saige.systems?title=${name}${desc ? `&desc=${desc}` : ""}${dark ? "&dark=true":  ""}`} />
+		<meta name="twitter:card" content="summary_large_image" />
 	</head>
 	<body
 		class="bg-background text-foreground mx-auto max-w-3xl pl-[2rem] pr-[2rem] mt-[5rem]"
