@@ -120,3 +120,16 @@ img, video {
 ::-webkit-scrollbar-thumb {
   @apply bg-foreground bg-opacity-60
 }
+
+
+.quote {
+  margin-left: .75rem;
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  background: var(--foreground);
+  height: 100%;
+  width: 2px;
+  margin-left: -.75rem;
+}
