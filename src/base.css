@@ -133,3 +133,7 @@ img, video {
   width: 2px;
   margin-left: -.75rem;
 }
+
+code {
+  @apply bg-foreground text-background rounded-md p-1 text-sm
+}

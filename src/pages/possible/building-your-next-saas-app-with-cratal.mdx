@@ -1,0 +1,37 @@
+---
+name: "Building your next SAAS app with Cratal"
+date: 16/12/22
+layout: ../../layouts/PostLayout.astro
+wip: true
+---
+import Quote from "../../components/Quote.astro"
+
+[Cratal](https://github.com/withastard/cratal) is an template for your future SAAS apps. It is currently in a very early beta as of writing this, but i thought i should build something basic on how to get started with it.
+
+### Getting started
+First you will need to clone Cratal from its [github repository](https://github.com/withastard/cratal). You can use the following command todo so. This command will clone down Cratal and put its content into a folder of your choosing.
+```bash
+git clone https://github.com/withastard/cratal YOUR_APP_NAME
+```
+
+
+Next open Cratal in your editor of choice. Along with 2 seperate terminal windows.
+Cratal requires that you fill out the "config.ts" files within both the "server" and the "client"
+
+
+### Removing certain features
+
+the following list will be layouted out as "feature - files to remove". Removing all of the files with permently remove that feature from cratal.
+
+<Quote>
+  The symbol "*" means everything, if this is placed after a directory just remove the directory as a whole.
+</Quote>
+<br/>
+Stripe - server/src/utils/providers/stripe.ts, server/src/routes/auth/upgrade.ts, server/src/routes/auth/upgrade/accept.ts
+<br/>
+Send Grid ( Emails ) -  server/src/utils/providers/sendGrid.ts
+<br/>
+Magic Link Auth - server/src/routes/auth/\*, client/src/pages/api/auth/*
+
+<br/>
+This will only remove required files, some functions may still exist aswell as api calls within default components.
